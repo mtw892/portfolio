@@ -1,0 +1,1086 @@
+
+/* ===========================
+   1. General Reset and Fonts
+=========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body takes the full viewport height */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures the full height of the screen */
+    margin: 0;
+}
+
+/* Content wrapper to take remaining space */
+
+.content-wrapper {
+    flex: 1; /* Pushes the footer to the bottom */
+}
+
+
+/* Footer stays at the bottom */
+
+/* Global Title Style */
+.page-title {
+    text-align: center;
+    font-size: 3rem;
+    color: #007bff;
+    margin-bottom: 10px; /* Adjust spacing below the title */
+    line-height: 1.2; /* Maintain consistent spacing between lines */
+}
+
+/* Optional Subtitle Style */
+.page-subtitle {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+
+
+body {
+    font-family: 'Roboto', sans-serif; /* Body text font */
+    color: #333;
+    line-height: 1.8; /* Improve readability */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif; /* Header font */
+    color: #007BFF;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+/* ===========================
+   2. Links and Hover Effects
+=========================== */
+a {
+    text-decoration: none;
+    font-weight: 500;
+    color: #007BFF;
+}
+
+a:hover {
+    color: #0056b3;
+}
+
+/* ===========================
+   3. Navbar Styling
+=========================== */
+/* Logo Styling */
+.site-logo {
+    height: 70px; /* Adjust the height as needed */
+    width: auto; /* Maintain aspect ratio */
+    display: inline-block; /* Ensure proper alignment */
+    margin: 5px 20px; /* Add space around the logo (top/bottom: 10px, left/right: 20px) */
+    cursor: pointer; /* Indicate clickability */
+}
+
+/* Adjust logo positioning within the header */
+.navbar .logo a {
+    display: flex; /* Flex alignment for the logo */
+    align-items: center; /* Center vertically with other elements */
+    text-decoration: none; /* Remove underline from the link */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-bottom: 2px solid #007BFF;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 1000;
+}
+
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem; /* Adjust the space between links to match the desired spacing */
+    justify-content: center; /* Center links horizontally */
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #007BFF; /* Matches the blue in your image */
+    font-weight: bold;
+    font-size: 1rem; /* Adjust font size if needed */
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #0056b3; /* Hover effect for links */
+}
+
+.menu-toggle {
+    display: none; /* Hidden by default on desktop */
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #007BFF;
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1500; /* Above other content */
+}
+
+/* Center the Navbar on Desktop */
+@media (min-width: 769px) {
+    .navbar {
+        justify-content: space-between; /* Space between the logo and nav-links */
+        position: relative;
+    }
+
+    .logo {
+        position: relative; /* Reset to relative positioning */
+        margin-left: 2rem; /* Add consistent spacing on the left */
+    }
+
+    .nav-links {
+        gap: 2rem; /* Adjust spacing between links */
+    }
+}
+
+/* Mobile Navbar Styling */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show toggle icon */
+    }
+
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Below navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+        padding: 1rem 0;
+        border-top: 2px solid #007BFF;
+        width: 80%; /* Width of dropdown */
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0; /* Spacing between links */
+    }
+}
+
+/* ===========================
+   4. Hero Section Styling
+=========================== */
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: calc(100vh - 100px); /* Full height minus navbar */
+    padding: 1rem;
+    color: #333; /* Ensure text is readable on the background */
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 1.5rem;
+}
+
+.cta-wrapper {
+    margin-top: 1.5rem;
+}
+
+.cta {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   5. Footer Styling
+=========================== */
+/* Footer styling */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.social-links {
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    margin: 0 0.5rem;
+    font-size: 1.5rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #d4e4ff;
+}
+
+/* ===========================
+   6. About Section
+=========================== */
+/* Adjusting the content-section */
+.content-section {
+    max-width: 2000px; /* Limit the width of the content for better readability */
+    margin: 0 auto; /* Center the content horizontally */
+    padding: 20px; /* Add padding around the content */
+    text-align: left; /* Center-align the text */
+    line-height: 1.8; /* Improve line spacing */
+    background: #ffffff; /* Optional: Add a subtle background color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a light shadow for better distinction */
+    border-radius: 8px; /* Optional: Rounded corners */
+}
+.profile-pic {
+    text-align: center; /* Center the image in the section */
+    margin-bottom: 20px; /* Add spacing below the image */
+}
+
+.profile-pic img {
+    width: 200px; /* Set the width of the image */
+    height: 200px; /* Set the height of the image */
+    object-fit: cover; /* Ensures the image scales without distortion */
+    border-radius: 50%; /* Make the image circular */
+    border: 4px solid #007BFF; /* Add a blue border */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+}
+
+.about {
+    background-color: #ffffff; /* Set background color to white */
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 200px); /* Full height minus navbar and footer */
+    background: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    max-width: 1200px;
+    gap: 2rem;
+    align-items: center;
+}
+
+.profile-pic img {
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 50%; /* Circular image */
+    border: 4px solid #007BFF; /* Border around the picture */
+}
+
+.about-info h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #007BFF;
+    text-align: center;
+}
+
+.about-info p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 1rem;
+}
+/* Projects Section */
+
+.projects-section {
+    padding: 2rem;
+    background: #f9f9f9; /* Light background color */
+    text-align: center;
+}
+
+.projects-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2.5rem;
+    color: #007BFF;
+    margin-bottom: 2rem;
+}
+
+/* Project Container Fix */
+.project-container {
+    display: flex; /* Use flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    margin: 0 auto; /* Center the container within the page */
+    padding: 20px; /* Add space inside the container */
+    min-height: 100vh; /* Ensure it takes the full height of the viewport */
+    width: 100%; /* Allow it to span the full width */
+    text-align: center; /* Center-align text within the container */
+    background: #f9f9f9; /* Optional: Add a light background */
+}
+
+/* Project Card Adjustments */
+.project-card {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    margin: 1rem 0; /* Space between cards */
+    max-width: 900px; /* Limit the width of cards for better readability */
+    width: 90%; /* Adjust for smaller screens */
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover Effect for Cards */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+
+
+.project-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+.project-image {
+    width: 50%; /* Ensure the image scales to the container width */
+    height: 400px; /* Set a fixed height for cropping */
+    object-fit: cover; /* Ensures the image fills the space */
+    object-position: top; /* Focus on the top part of the image */
+    border-radius: 8px; /* Optional: Rounded corners */
+    margin-bottom: 1rem;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+    .project-image {
+        width: 100%; /* Slightly smaller than full width for spacing */
+        height: 300px; /* Increase height for larger display */
+        margin: 0 auto; /* Center the image */
+        
+    }
+}
+
+.project-description {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1rem;
+    text-align: justify;
+}
+/* ===========================
+   Resume Page Styles
+=========================== */
+
+body.resume-page {
+    background-color: #f4f4f9; /* Light background for the resume page */
+    font-family: 'Roboto', sans-serif;
+    color: #333; /* Darker text for readability */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Resume Section Styling */
+.resume-section {
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+    min-height: 100vh; /* Full viewport height */
+    margin: 0 auto; /* Center the container horizontally */
+    padding: 20px; /* Add padding inside the section */
+    background: white; /* Change background color to white */
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Subtle shadow */
+    max-width: 800px; /* Limit the width of the resume container */
+    width: 90%; /* Make it responsive for smaller screens */
+    text-align: left; /* Center-align the text inside the section */
+}
+
+/* Center-align headers in the resume section */
+.resume-section h2,
+.resume-section h3 {
+    text-align: center; /* Center-align the text */
+    color: #007BFF; /* Optional: Add a consistent color for headers */
+    margin-bottom: 20px; /* Add space below headers */
+    font-family: 'Poppins', sans-serif; /* Optional: Use a clean font */
+}
+
+/* Add spacing and consistency for subheaders or additional headings */
+.resume-section h3 {
+    font-size: 1.5rem; /* Slightly smaller font size */
+    margin-top: 20px; /* Add space above each h3 header */
+}
+
+
+.resume-heading {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    color: #007BFF;
+    text-align: center; /* Centers the text horizontally */
+    margin-bottom: 1.5rem;
+    border-bottom: 2px solid #007BFF; /* Adds an underline for style */
+    padding-bottom: 0.5rem;
+    display: block; /* Ensures proper alignment */
+}
+
+
+.resume-summary,
+.resume-experience,
+.resume-education,
+.resume-skills {
+    margin-bottom: 2rem;
+}
+
+.resume-summary h2,
+.resume-experience h2,
+.resume-education h2,
+.resume-skills h2 {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 1rem;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.resume-summary p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+.job h3 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.job p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.job ul {
+    list-style: disc;
+    padding-left: 1.5rem;
+}
+
+.job ul li {
+    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    color: #555;
+}
+
+
+.resume-download {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.resume-download .cta {
+    display: inline-block;
+    background: #007BFF;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 30px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.resume-download .cta:hover {
+    background: #0056b3;
+    transform: scale(1.05); /* Slightly increases the size on hover */
+}
+
+/* Goals Section */
+.goals-section {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f4f4f4, #e9ecef); /* Optional: Add a gradient background */
+    text-align: center;
+}
+
+/* Goals Container */
+.goals-container {
+    background: white; /* Container background color */
+    padding: 20px;
+    border-radius: 12px; /* Rounded corners */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: left; /* Align text to the left */
+    max-width: 800px;
+    min-height: 250px;
+    margin: 0 auto; /* Center the container */
+}
+
+/* Goals Container Heading */
+.goals-container h2 {
+    font-size: 1.8rem;
+    color: #007BFF; /* Match your site's theme */
+    margin-bottom: 10px;
+}
+
+/* Goals List */
+.goals-container ul {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.goals-container ul li {
+    position: relative;
+    margin-bottom: 10px;
+    padding-left: 20px; /* Add space for custom bullet */
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Custom Bullet Points */
+.goals-container ul li::before {
+    content: '●'; /* Custom bullet point */
+    color: #007BFF; /* Match theme color */
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .goals-content {
+        padding: 10px;
+    }
+    .goals-category {
+        padding: 15px;
+    }
+}
+
+/* Contact Section Styling */
+/* Modern Contact Section Styling */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #f4f4f4, #ffffff);
+    text-align: center;
+    min-height: 100vh;
+}
+
+.contact-header h2 {
+    font-size: 2.8rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.contact-header p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+/* Modern Contact Form Styling */
+.contact-form-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-form-modern:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Form Fields */
+.form-field {
+    position: relative;
+}
+
+.form-field input,
+.form-field textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #f9f9f9;
+    outline: none;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: #007BFF;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    background: #fff;
+}
+
+/* Modern Submit Button */
+.modern-btn {
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+}
+
+.modern-btn:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-header h2 {
+        font-size: 2rem;
+    }
+    .contact-header p {
+        font-size: 1rem;
+    }
+    .modern-btn {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
+}
+
+/* Skills Section Styling */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #f4f4f4, #e9ecef);
+    text-align: center;
+    min-height: 100vh;
+}
+
+.skills-section h2 {
+    font-size: 2.8rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.skills-section p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+/* Skills Container */
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px;
+}
+
+/* Skill Category Card */
+.skill-category {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+.skill-category h3 {
+    font-size: 1.5rem;
+    color: #007BFF;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.skill-category p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.8;
+}
+
+/* Hover Effect */
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+    }
+
+    .skills-section h2 {
+        font-size: 2rem;
+    }
+
+    .skills-section p {
+        font-size: 1rem;
+    }
+}
+
+
+/* Footer Styling for Resume Page */
+footer {
+    background: #007BFF;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: auto; /* Pushes the footer to the bottom */
+}
+
+footer .social-links {
+    margin-top: 0.5rem;
+}
+
+footer .social-link {
+    margin: 0 0.5rem;
+    font-size: 1.2rem;
+    color: white;
+    transition: color 0.3s ease;
+}
+
+footer .social-link:hover {
+    color: #d4e4ff; /* Light blue hover effect */
+}
+
+
+/* Call-to-Action Button */
+.cta {
+    display: inline-block;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    display: block;
+    text-align: center;
+}
+
+.cta:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* ===========================
+   7. Bubbles Animation
+=========================== */
+.bubbles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Allow interaction with other elements */
+    z-index: -1; /* Place behind other content */
+}
+
+.bubble {
+    position: absolute;
+    bottom: -50px; /* Start below the screen */
+    width: 10px;
+    height: 10px;
+    background: rgba(0, 123, 255, 0.6); /* Light blue */
+    border-radius: 50%;
+    animation: float 4s ease-in infinite;
+    opacity: 0.8;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* ===========================
+   8. Typewriter Effect
+=========================== */
+.typewriter {
+    border-right: 2px solid #007BFF;
+    display: inline-block;
+    animation: blink-caret 0.7s step-end infinite;
+}
+
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #007BFF;
+    }
+}
+
+/* Scoped Hero Section for All Pages Except Index */
+body.about-page .hero,
+body.project-page .hero,
+body.resume-page .hero,
+body.goals-page .hero,
+body.contact-page .hero,
+body.skills-page .hero {
+    text-align: center;
+    padding: 20px 0;
+    background-color: #ffffff; /* Light blue-gray background color */
+    margin-bottom: 20px; /* Add space below the hero section */
+}
+
+body.about-page .page-title,
+body.project-page .page-title,
+body.resume-page .page-title,
+body.goals-page .page-title,
+body.contact-page .page-title,
+body.skills-page .page-title {
+    font-size: 3rem;
+    color: #000000;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+
+body.about-page .page-subtitle,
+body.project-page .page-subtitle,
+body.resume-page .page-subtitle,
+body.goals-page .page-subtitle,
+body.contact-page .page-subtitle,
+body.skills-page .page-subtitle {
+    font-size: 1.2rem;
+    color: #007BFF;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+
+
+/* Ensure desktop and mobile-specific styles are separate */
+
+/* Default styling for navigation links (desktop) */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 6.5rem; /* Desktop spacing between links */
+    justify-content: center;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Below navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+        padding: 1rem 0;
+        border-top: 2px solid #007BFF;
+        gap: 1rem; /* Desktop spacing between links */
+        width: 80%; /* Width of dropdown */
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0; /* Mobile-specific spacing between links */
+    }
+
+    .nav-links a {
+        font-size: 1rem; /* Adjust font size for mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Position below navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+        padding: 0.5rem 0; /* Reduced padding to condense height */
+        border-top: 2px solid #007BFF;
+        width: 80%;
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    /* Reduce spacing for links */
+    .nav-links li {
+        margin: 0.3rem 0; /* Condensed spacing between links */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Slightly smaller font size for compact view */
+    }
+}
+
+
+/* Cleaned and updated mobile-specific styles */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hidden by default */
+        flex-direction: column; /* Stack links vertically */
+        align-items: center;
+        position: absolute;
+        top: 100%; /* Position below navbar */
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.95); /* Semi-transparent background */
+        padding: 0.5rem 0; /* Reduced padding to condense height */
+        border-top: 2px solid #007BFF;
+        width: 80%; /* Width of dropdown */
+        text-align: center;
+    }
+
+    .nav-links.active {
+        display: flex; /* Show menu when active */
+    }
+
+    /* Reduce spacing for links */
+    .nav-links li {
+        margin: 0.3rem 0; /* Condensed spacing between links */
+    }
+
+    .nav-links a {
+        font-size: 0.9rem; /* Slightly smaller font size for compact view */
+    }
+}
+
+
+/* ===========================
+   Additional Updates
+=========================== */
+/* Fix for .cta buttons */
+.cta {
+    display: inline-block; /* Prevent resizing to container width */
+    padding: 0.8rem 2rem; /* Uniform padding */
+    width: auto; /* Ensure size matches text */
+    white-space: nowrap; /* Prevent text wrapping */
+    text-align: center; /* Center text */
+    box-sizing: border-box; /* Include padding in width */
+    font-size: 1rem;
+    background: linear-gradient(90deg, #007BFF, #0056b3);
+    color: white;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta:hover {
+    background: linear-gradient(90deg, #0056b3, #003f7f);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Updates for .typewriter to isolate its effects */
+.typewriter {
+    border-right: 2px solid #007BFF;
+    display: inline-block;
+    animation: blink-caret 0.7s step-end infinite;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+/* Blink caret animation */
+@keyframes blink-caret {
+    from, to {
+        border-color: transparent;
+    }
+    50% {
+        border-color: #007BFF;
+    }
+}
